@@ -42,6 +42,13 @@ public class Authorization implements IAuthorizable {
     public void method4(){
         System.out.println("method 4");
     }
+    public void method5(){
+        try {
+            throw new Exception("Random exception!");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     @Override
     public boolean isAuthorize() {
