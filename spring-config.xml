@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <bean id="authorization" class="auth.model.Authorization">
+        <property name="code" ref="calculatecode"/>
+    </bean>
+
+    <bean id="calculatecode" class="code.model.CodeByASCII">
+        <constructor-arg value="RBuuy2tf"/>
+    </bean>
+
+    <bean id="checker" class="auth.model.AuthorizeChecker">
+              <property name="flagMethods" value="true"/>
+              <property name="methods">
+                      <array>
+                             <value>method1</value>
+                             <value>method2</value>
+                             <value>method3</value>
+                      </array>
+              </property>
+       </bean>
+
+<aop:aspectj-autoproxy proxy-target-class="true"/>
+    <aop:config>
+        <aop:aspect ref="checker">
+            <aop:pointcut id="passwordchecker" expression="execution(public * method*())"/>
+            <aop:around method="checkAuthorization" pointcut-ref="passwordchecker" />
+        </aop:aspect>
+    </aop:config>
+</beans>
