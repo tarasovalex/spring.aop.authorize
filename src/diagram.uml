@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="0.0" y="559.0">controller.Main</node>
+    <node x="336.0" y="200.5">code.model.CodeByASCII</node>
+    <node x="0.0" y="396.0">auth.model.AuthorizeChecker</node>
+    <node x="288.25" y="0.0">code.model.ICode</node>
+    <node x="5.0" y="11.0">auth.model.IAuthorizable</node>
+    <node x="0.0" y="123.0">auth.model.Authorization</node>
+    <node x="404.0" y="396.0">excaption.model.CatchException</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="code.model.CodeByASCII" target="code.model.ICode">
+      <point x="0.0" y="-36.5" />
+      <point x="47.75" y="36.5" />
+    </edge>
+    <edge source="auth.model.Authorization" target="code.model.ICode">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="auth.model.Authorization" target="auth.model.IAuthorizable">
+      <point x="-79.0" y="-114.0" />
+      <point x="0.0" y="25.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.9476190476190476" x="313.5" y="305.0" />
+  <SelectedNodes>
+    <node>auth.model.IAuthorizable</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Inner Classes</Category>
+    <Category>Properties</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
